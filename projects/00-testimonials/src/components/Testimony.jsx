@@ -1,4 +1,5 @@
 import EmmaImage from '../images/testimonio-emma.png';
+import '../styles/Testimony.css'
 
 function Testimony() {
     // Un componente funcional de React retorna un elemento JSX
