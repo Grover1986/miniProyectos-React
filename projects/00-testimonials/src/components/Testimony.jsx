@@ -1,3 +1,5 @@
+import EmmaImage from '../images/testimonio-emma.png';
+
 function Testimony() {
     // Un componente funcional de React retorna un elemento JSX
     return (
@@ -5,7 +7,7 @@ function Testimony() {
             {/* todo lo q va entre {} se considera un valor o una expresión de JS */}
             <img
                 className='testimony-image'
-                src={require('../images/testimonio-emma.png')} // para insertar una imagen, una opción es usar require()
+                src={EmmaImage} // para insertar una imagen, una opción es usar require()
                 alt='Foto de Emma'
             />
             {/* por ahora estamos asignando valores fijos pero luego con las props esto será dinámico para reutilizar código y no tener q
