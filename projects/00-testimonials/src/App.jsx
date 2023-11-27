@@ -13,7 +13,7 @@ function App() {
                     name='Shawn Wang'
                     country='Singapur'
                     image='/images/testimonio-shawn.png'
-                    rol='Ingeniero de Software'
+                    position='Ingeniero de Software'
                     company='Amazon'
                     testimony='Da miedo cambiar de carrera. Solo gané la confianza de que podía programar trabajando a través de los cientos de horas de lecciones gratuitas en freeCodeCamp. Dentro de un año tuve un trabajo de seis cifras como ingeniero de software. freeCodeCamp cambió mi vida.'
                 />
@@ -22,7 +22,7 @@ function App() {
                     name='Sarah Chima'
                     country='Nigeria'
                     image='/images/testimonio-sarah.png'
-                    rol='Ingeniera de Software'
+                    position='Ingeniera de Software'
                     company='ChatDesk'
                     testimony='freeCodeCamp fue la puerta de entrada a mi carrera como desarrollador de software. El plan de estudios bien estructurado llevó mis conocimientos de programación de un nivel de principiante total a un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble.'
                 />
