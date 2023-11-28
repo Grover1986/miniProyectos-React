@@ -1,5 +1,6 @@
 import './App.css'
 import Testimony from "./components/Testimony";
+import testimonials from './services/testimonials';
 
 function App() {
 
@@ -8,38 +9,21 @@ function App() {
             <div className='main-container'>
                 <h1>Esto es lo que dicen nuestros alumnos sobre freeCodeCamp:</h1>
 
-                {/* para trabajar las imágenes en el componente Padre, tenemos q ponerlas en carpeta public */}
-                <Testimony
-                    name='Shawn Wang'
-                    country='Singapur'
-                    image='/images/testimonio-shawn.png'
-                    position='Ingeniero de Software'
-                    company='Amazon'
-                    testimony={<>"Da miedo cambiar de carrera. Solo gané la confianza de que podía programar trabajando a través de los cientos de horas de lecciones gratuitas en freeCodeCamp. 
-                    Dentro de un año tuve un trabajo de seis cifras como ingeniero de software. <strong>freeCodeCamp cambió mi vida.</strong>"</>}
-                />
+                {testimonials.map((elem, index) => {
+                    const {name, country, image, position, company, testimony} = elem
 
-                <Testimony
-                    name='Sarah Chima'
-                    country='Nigeria'
-                    image='/images/testimonio-sarah.png'
-                    position='Ingeniera de Software'
-                    company='ChatDesk'
-                    testimony={<>"<strong>freeCodeCamp fue la puerta de entrada a mi carrera</strong> como desarrollador de software. 
-                    El plan de estudios bien estructurado llevó mis conocimientos de programación de un nivel de principiante total a un nivel muy seguro. 
-                    Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble."</>}
-                />
+                    return (
+                        <Testimony key={index}
+                            name={name}
+                            country={country}
+                            image={image}
+                            position={position}
+                            company={company}
+                            testimony={testimony}
+                        />
+                    )
+                })}
 
-                <Testimony
-                    name='Emma Bostian'
-                    country='Suecia'
-                    image='/images/testimonio-emma.png'
-                    position='Ingeniera de Software'
-                    company='Spotify'
-                    testimony={<>"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. 
-                    Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong>freeCodeCamp me dio las habilidades</strong> y la confianza que necesitaba para 
-                    conseguir el trabajo de mis sueños como ingeniero de software en Spotify."</>}
-                />
             </div>
         </div>
     )
