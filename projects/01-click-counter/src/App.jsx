@@ -4,6 +4,14 @@ import Boton from './components/Boton'
 
 function App() {
 
+  const handleClick = (e) => {
+    console.log('event: ', e.target.textContent)
+  }
+
+  const resetCounter = (e) => {
+    console.log('event: ', e.target.textContent)
+  }
+
   return (
     <div className='App'>
         <div className='freecodecamp-logo-container'>
@@ -18,12 +26,12 @@ function App() {
             <Boton 
               text='Clic' 
               isButtonClic={true}
-              handleClick='' 
+              handleClick={handleClick} 
             />
             <Boton 
               text='Reiniciar' 
               isButtonClic={false}
-              handleClick='' 
+              handleClick={resetCounter}
             />
         </div>
     </div>
