@@ -1,16 +1,19 @@
 import './App.css'
+import { useState } from 'react'
 import freeCodeCampLogo from '/freecodecamp-logo.png'
 import Boton from './components/Boton'
 import Counter from './components/Counter'
 
 function App() {
 
-  const handleClick = (e) => {
-    console.log('event: ', e.target.textContent)
+  const [numClics, setNumClics] = useState(0)
+
+  const handleClick = () => {
+    setNumClics(numClics + 1)
   }
 
-  const resetCounter = (e) => {
-    console.log('event: ', e.target.textContent)
+  const resetCounter = () => {
+    setNumClics(0)
   }
 
   return (
@@ -25,7 +28,7 @@ function App() {
         <div className="main-container">
             {/* en este contenedor iran el Contador y los dos Botones */}
             <Counter 
-                numClics='5' 
+                numClics={numClics} 
             />
             <Boton 
               text='Clic' 
