@@ -1,3 +1,5 @@
+import '../styles/Boton.css'
+
 function Boton ({ text, isButtonClic, handleClick }) {
 
     return (
