@@ -14,7 +14,13 @@ function App() {
             />
          </div>
          <div className="calculator-container">
-            
+             {/* 4 filas para los números y signos */}
+            <div className="row"></div>
+            <div className="row"></div>
+            <div className="row"></div>
+            <div className="row"></div>
+             {/* fila para el botón Limpiar */}
+            <div className="row"></div>
          </div>
       </div>
    )
