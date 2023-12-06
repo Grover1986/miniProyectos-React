@@ -18,6 +18,7 @@ function App() {
              {/* 4 filas para los números y signos */}
             <div className="row">
                <Boton>1</Boton>
+               <Boton>+</Boton>
             </div>
             <div className="row"></div>
             <div className="row"></div>
