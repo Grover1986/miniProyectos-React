@@ -1,6 +1,7 @@
 import './App.css'
 import freeCodeCampLogo from '/freecodecamp-logo.png'
 import Boton from './components/Boton'
+import Screen from './components/Screen'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
             />
          </div>
          <div className="calculator-container">
-             {/* 4 filas para los números y signos */}
+            <Screen />
             <div className="row">
                <Boton>1</Boton>
                <Boton>2</Boton>
@@ -40,7 +41,6 @@ function App() {
                <Boton>.</Boton>
                <Boton>/</Boton>
             </div>
-             {/* fila para el botón Limpiar */}
             <div className="row"></div>
          </div>
       </div>
