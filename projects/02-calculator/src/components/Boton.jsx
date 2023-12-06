@@ -1,3 +1,5 @@
+import '../css/Boton.css'
+
 function Boton(props) {
 
     const isOperator = (value) => {
