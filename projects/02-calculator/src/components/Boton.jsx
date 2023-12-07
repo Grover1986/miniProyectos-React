@@ -14,10 +14,13 @@ function Boton(props) {
         * Si el Botón tiene un Operador el fondo será verde y si es un número el color será distinto
         */
         /* llamamos a una funcion dentro de className para saber si children es un operador (+,-,*,/), sí es un operador agregamos clase 'operator' sino ninguna clase */
-        <div className={`btn ${isOperator(props.children) ? 'operator' : ''}`.trim()}>
-            {/* hasta el momento todos los componentes q hemos creado han tenido una sola etiqueta la de apertura, pero tmb un componente q definamos puede tener etiqueta de apertura
-            y de cierre, y todo lo q incluyamos dentro de las etiquetas de apertura y de cierre podemos usarlo con props.children q quiere decir descendientes o hijos,
-            veamos un ejemplo ya q este componente ya puede renderizarse en App.js */}
+        <div 
+            className={`btn ${isOperator(props.children) ? 'operator' : ''}`.trim()}
+            // Como estamos 👇 llamando a una función 'props.handleClick', éste se va a reemplazar x el valor retornado de dicha funcion y eso nos dará error xq el event listener
+            // no debe retornar sólo un valor es decir no debe recibir una llamada sino q debe ser una función llamando a otra función es como una acción q esta esperando q ocurra 
+            // el evento; entonces para q el div llame a la funcion correctamente, tenemos q escribir una funcion anónima y éste ahora si retornara correctamente y no sólo un valor
+            onClick={() => props.handleClick(props.children)}>  {/* Cuando usamos este props.handleClick estamos accediendo a su valor es decir a addInput y esa funcion necesita 
+            un valor y ese valor es props.children */}
             {props.children}
         </div>
     )

@@ -31,28 +31,33 @@ function App() {
          <div className="calculator-container">
             <Screen input={input} /> {/* le pasamos la props input y el valor del estado */}
             <div className="row">
-               <Boton>1</Boton>
-               <Boton>2</Boton>
-               <Boton>3</Boton>
-               <Boton>+</Boton>
+               {/* 
+                  *  Ahora todos nuestros botones tienen acceso a nuestra función addInput
+                  *  Ahora ¿cómo hacemos q el Boton llame a esta función addInput, ya q solo la estamos pasando como un prop?
+                  *  Eso lo hacemos en componente Boton, ahí llamamos a handleClick y cuando hacemos eso 
+               */}
+               <Boton handleClick={addInput}>1</Boton>
+               <Boton handleClick={addInput}>2</Boton>
+               <Boton handleClick={addInput}>3</Boton>
+               <Boton handleClick={addInput}>+</Boton>
             </div>
             <div className="row">
-               <Boton>4</Boton>
-               <Boton>5</Boton>
-               <Boton>6</Boton>
-               <Boton>-</Boton>
+               <Boton handleClick={addInput}>4</Boton>
+               <Boton handleClick={addInput}>5</Boton>
+               <Boton handleClick={addInput}>6</Boton>
+               <Boton handleClick={addInput}>-</Boton>
             </div>
             <div className="row">
-               <Boton>7</Boton>
-               <Boton>8</Boton>
-               <Boton>9</Boton>
-               <Boton>*</Boton>
+               <Boton handleClick={addInput}>7</Boton>
+               <Boton handleClick={addInput}>8</Boton>
+               <Boton handleClick={addInput}>9</Boton>
+               <Boton handleClick={addInput}>*</Boton>
             </div>
             <div className="row">
-               <Boton>=</Boton>
-               <Boton>0</Boton>
-               <Boton>.</Boton>
-               <Boton>/</Boton>
+               <Boton handleClick={addInput}>=</Boton>
+               <Boton handleClick={addInput}>0</Boton>
+               <Boton handleClick={addInput}>.</Boton>
+               <Boton handleClick={addInput}>/</Boton>
             </div>
             <div className="row">
                {/* este valor 'Limpiar' es fijo no va a cambiar x eso lo hubieramos manejado en duro en vez de props.children en su respectivo componente 'BotonClear', 
