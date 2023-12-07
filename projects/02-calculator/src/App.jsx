@@ -1,11 +1,23 @@
 import './App.css'
+import { useState } from 'react'
 import freeCodeCampLogo from '/freecodecamp-logo.png'
 import Boton from './components/Boton'
 import Screen from './components/Screen'
 import BotonClear from './components/BotonClear'
 
 function App() {
+   /**
+    * Vamos a trabajar con el estado aquí directamente, otro enfoque sería haber creado otro componente llamado Calculadora y q ese componente tuviera ese estado.
+    * En cualquiera de los dos casos es válido.
+    * Este estado le pertenece a App
+    */
+   const [input, setInput] = useState('')
 
+   // ahora creamos una función q va actualizar el input
+   const addInput = value => (
+      setInput(input + value)  // aquí concatenamos nuestro valor inicial con el nuevo valor q recibirá la función, y luego veremos como lo vamos a interpretar como una operación 
+      // matematica.
+   )
 
    return (
       <div className='App'>
@@ -17,7 +29,7 @@ function App() {
             />
          </div>
          <div className="calculator-container">
-            <Screen />
+            <Screen input={input} /> {/* le pasamos la props input y el valor del estado */}
             <div className="row">
                <Boton>1</Boton>
                <Boton>2</Boton>
