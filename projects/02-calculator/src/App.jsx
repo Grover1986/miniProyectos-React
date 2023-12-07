@@ -4,6 +4,7 @@ import freeCodeCampLogo from '/freecodecamp-logo.png'
 import Boton from './components/Boton'
 import Screen from './components/Screen'
 import BotonClear from './components/BotonClear'
+import { evaluate } from 'mathjs'
 
 function App() {
    /**
@@ -18,6 +19,11 @@ function App() {
       setInput(input + value)  // aquí concatenamos nuestro valor inicial con el nuevo valor q recibirá la función, y luego veremos como lo vamos a interpretar como una operación 
       // matematica.
    )
+
+   const calculateResult = () => {
+      if(input) setInput(evaluate(input))
+      else alert('¡Por favor ingrese algún número!')
+   }
 
    return (
       <div className='App'>
@@ -54,7 +60,7 @@ function App() {
                <Boton handleClick={addInput}>*</Boton>
             </div>
             <div className="row">
-               <Boton handleClick={addInput}>=</Boton>
+               <Boton handleClick={calculateResult}>=</Boton>
                <Boton handleClick={addInput}>0</Boton>
                <Boton handleClick={addInput}>.</Boton>
                <Boton handleClick={addInput}>/</Boton>
