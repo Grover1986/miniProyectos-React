@@ -2,6 +2,7 @@ import './App.css'
 import freeCodeCampLogo from '/freecodecamp-logo.png'
 import Boton from './components/Boton'
 import Screen from './components/Screen'
+import BotonClear from './components/BotonClear'
 
 function App() {
 
@@ -41,7 +42,12 @@ function App() {
                <Boton>.</Boton>
                <Boton>/</Boton>
             </div>
-            <div className="row"></div>
+            <div className="row">
+               {/* este valor 'Limpiar' es fijo no va a cambiar x eso lo hubieramos manejado en duro en vez de props.children en su respectivo componente 'BotonClear', 
+                  pero en el caso de componente Boton si hemos manejado props.children xq el valor cambia
+               */}
+               <BotonClear>Limpiar</BotonClear>
+            </div>
          </div>
       </div>
    )
