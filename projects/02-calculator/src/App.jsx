@@ -60,10 +60,10 @@ function App() {
                <Boton handleClick={addInput}>/</Boton>
             </div>
             <div className="row">
-               {/* este valor 'Limpiar' es fijo no va a cambiar x eso lo hubieramos manejado en duro en vez de props.children en su respectivo componente 'BotonClear', 
-                  pero en el caso de componente Boton si hemos manejado props.children xq el valor cambia
-               */}
-               <BotonClear>Limpiar</BotonClear>
+               {/* esta es otra alternativa de llamar a una funcion sin necesidad de crear otra como x ejm addInput */}
+               <BotonClear handleClear={() => setInput('')}>
+                  Limpiar
+               </BotonClear>
             </div>
          </div>
       </div>
