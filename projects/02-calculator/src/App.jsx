@@ -1,10 +1,10 @@
 import './App.css'
 import { useState } from 'react'
-import freeCodeCampLogo from '/freecodecamp-logo.png'
+import { evaluate } from 'mathjs'
 import Boton from './components/Boton'
 import Screen from './components/Screen'
 import BotonClear from './components/BotonClear'
-import { evaluate } from 'mathjs'
+import Logo from './components/Logo'
 
 function App() {
    /**
@@ -27,13 +27,7 @@ function App() {
 
    return (
       <div className='App'>
-         <div className='freecodecamp-logo-container'>
-            <img
-               className='freecodecamp-logo'
-               src={freeCodeCampLogo}
-               alt='Logo de freeCodeCamp'
-            />
-         </div>
+         <Logo />
          <div className="calculator-container">
             <Screen input={input} /> {/* le pasamos la props input y el valor del estado */}
             <div className="row">
