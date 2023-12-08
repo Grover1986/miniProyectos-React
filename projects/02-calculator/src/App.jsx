@@ -15,10 +15,16 @@ function App() {
    const [input, setInput] = useState('')
 
    // ahora creamos una función q va actualizar el input
-   const addInput = value => (
+   const addInput = value => {
       setInput(input + value)  // aquí concatenamos nuestro valor inicial con el nuevo valor q recibirá la función, y luego veremos como lo vamos a interpretar como una operación 
       // matematica.
-   )
+      if(!input) {
+         if(value == '+' || value == '-' || value == '*' || value == '/') {
+            alert('¡Por favor ingrese algún número!')
+            setInput('')
+         }
+      }
+   }
 
    const calculateResult = () => {
       if(input) setInput(evaluate(input))
