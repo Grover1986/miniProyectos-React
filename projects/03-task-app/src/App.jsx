@@ -1,10 +1,13 @@
 import './App.css'
+import Logo from './components/Logo'
 
 function App() {
 
-  return (
-   <div>Holaaa</div>
-  )
+   return (
+      <div className='task-app'>
+         <Logo />
+      </div>
+   )
 }
 
 export default App

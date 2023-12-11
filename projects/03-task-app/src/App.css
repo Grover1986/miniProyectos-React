@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    background-color: #1b1b32;
+    color: white;
+    font-family: Lato, sans-serif;
+}
+.task-app {
+    height: 100vh;
+    font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
