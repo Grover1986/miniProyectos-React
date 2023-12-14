@@ -1,3 +1,4 @@
+import '../css/TaskList.css'
 import TaskForm from "./TaskForm"
 
 // este componente será el q contiene a ambos, tanto al formulario y a las tareas

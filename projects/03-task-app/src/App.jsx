@@ -1,6 +1,6 @@
 import './App.css'
 import Logo from './components/Logo'
-import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
          <Logo />
          <div className="main-task-list">
             <h1>Mis Tareas</h1>
-            <TaskForm />
+            <TaskList />   {/* este componente va a representar el formulario y la lista como tal de las tareas */}
          </div>
       </div>
    )
