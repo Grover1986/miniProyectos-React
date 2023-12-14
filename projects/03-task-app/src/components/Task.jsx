@@ -1,9 +1,10 @@
 import '../css/Task.css'
 import { AiOutlineCloseCircle } from 'react-icons/ai'; // importamos react-icons
 
-function Task({ text }) {
+// la prop completed nos sirve para q el estilo cambie al completar la tarea
+function Task({ text, completed }) {
     return (
-        <div className='task-container'>
+        <div className={completed ? 'task-container completed' : 'task-container'}>
             <div className='task-text'>
                 {text}
             </div>
