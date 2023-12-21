@@ -1,10 +1,21 @@
+import { useState } from 'react'
 import '../css/TaskForm.css'
 
 function TaskForm() {
-    // aqui no tenemos como interactuar cuando se dé clic al boton, asi que crearemos una funcion
+
+    // cuando el usuario esté escribiendo tenemos q cambiar el estado del formulario, asi q crearemos un useState
+    const [input, setInput] = useState('')
+
+    const handleChange = e => {
+        setInput(e.target.value)
+    }
+
     const handleSend = e => {
         const taskNew = {
-            id: '123456'
+            id: '123456',
+            // Ahora deseamos q el texto sea lo q escribió el usuario, y ¿cómo vamos a obtener lo q escribió el usuario?
+            // ps tenemos q manejar q ocurre cuando cambia el contenido del formulario, para eso creamos funcion handleChange
+            texto: 'Hola'
         }
     }
 
@@ -15,6 +26,7 @@ function TaskForm() {
                 type='text'
                 placeholder='Escribe una tarea'
                 name='text'
+                onChange={handleChange}
             />
             <button className='task-button'>
                 Agregar Tarea
