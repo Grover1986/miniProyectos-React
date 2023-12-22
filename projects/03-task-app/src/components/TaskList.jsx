@@ -8,20 +8,21 @@ function TaskList() {
 
     const [tasks, setTasks] = useState([])
 
-    /**
-     * Ahora, ¿qué es lo que debe ocurrir para q se agregue una tarea a la lista?
-     * Inicialmente esa lista está vacía (hablando del useState tasks)
-     * Cuando en el formulario (componente TaskForm) se haga clic sobre el boton Agregar Tarea, queremos q el componente TaskList lo sepa y agregue esa tarea al useState tasks 
-     * x medio de funcion addTask
-     */
+    // es impresionante como podemos comunicarnos entre componentes, básicamente estamos pasando esta función al formulario TaskForm y luego ese formulario TaskForm a partir de props 
+    // esta mandando la tarea de vuelta a Lista de Tareas TaskList para agregarla
     const addTask = task => {
-        console.log('Tarea agregada')
-        console.log(task)
+        if(task.text.trim()) { // validamos si la tarea no está vacía
+            task.text = task.text.trim()  // quitamos los espacios innecesarios
+
+            const tasksUpdate = [task, ...tasks] // este arreglo va a contener la tarea nueva y todas las tareas anteriores, tiene este orden xq tarea nueva estará al principio del array
+            setTasks(tasksUpdate)  // actualizamos el estado
+        }
     }
+    //☝️ y eso es básciamente lo q hacemos para agregar la tarea
 
     return (
         <>
-            <TaskForm />
+            <TaskForm onSubmit={addTask} />
             <div className='task-list-container'>
                 {/* Ahora, ¿cómo mostrar una lista de componentes de React? 
                     * ps vamos a generar una lista de componentes Tarea (Task) y cada uno de esos componentes va a tener sus propios valores

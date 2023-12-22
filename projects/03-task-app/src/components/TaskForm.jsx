@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import '../css/TaskForm.css'
+import {v4 as uuidv4} from 'uuid'
 
-function TaskForm() {
+function TaskForm(props) {
 
     // cuando el usuario esté escribiendo tenemos q cambiar el estado del formulario, asi q crearemos un useState
     const [input, setInput] = useState('')
@@ -14,11 +15,13 @@ function TaskForm() {
         e.preventDefault()
         console.log('Enviando formulario')
 
+        // este objeto va quedando bien, ya luego lo vamos a pasar a nuestro componente TaskList para poder actualizar esa lista de tareas q representa su estado
         const taskNew = {
-            id: '123456',
+            id: uuidv4(),   // para manejar los Identificadores instalamos UUID
             texto: input,
             completed: false
         }
+        props.onSubmit(taskNew) // esta funcion será un prop q nos lo va a pasar el componente TaskList y nos va a permitir agregar esta tarea (objeto) a la lista de tareas del estado
     }
 
     return (
