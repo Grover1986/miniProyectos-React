@@ -11,16 +11,20 @@ function TaskForm() {
     }
 
     const handleSend = e => {
+        e.preventDefault()
+        console.log('Enviando formulario')
+
         const taskNew = {
             id: '123456',
-            // Ahora deseamos q el texto sea lo q escribió el usuario, y ¿cómo vamos a obtener lo q escribió el usuario?
-            // ps tenemos q manejar q ocurre cuando cambia el contenido del formulario, para eso creamos funcion handleChange
-            texto: 'Hola'
+            texto: input,
+            completed: false
         }
     }
 
     return (
-        <form className='task-form'>
+        <form 
+            className='task-form'
+            onSubmit={handleSend}>
             <input
                 className='task-input'
                 type='text'
