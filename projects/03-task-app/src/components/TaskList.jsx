@@ -19,7 +19,12 @@ function TaskList() {
             setTasks(tasksUpdate)  // actualizamos el estado
         }
     }
-    //☝️ y eso es básciamente lo q hacemos para agregar la tarea
+    //☝️ y eso es básicamente lo q hacemos para agregar la tarea
+
+    const deleteTask = id => {
+        const tasksUpdate = tasks.filter(task => task.id !== id)
+        setTasks(tasksUpdate)
+    }
 
     return (
         <>
@@ -35,6 +40,7 @@ function TaskList() {
                             key={task.id} // para q React sepa el orden de la lista y no lo cambie al actualizarlo debemos usar un atributo importante llamado key, si no se inluye key puede haber un error
                             id={task.id} // aqui tmb repetimos pero en atributo id, eso xq key no se pasa como un prop es decir no podemos acceder a key en el componente, en cambio id si
                             text={task.text}
+                            deleteTask={deleteTask}
                             completed={task.completed}
                         />
                     )
