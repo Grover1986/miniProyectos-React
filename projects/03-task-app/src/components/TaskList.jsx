@@ -11,6 +11,7 @@ function TaskList() {
     // es impresionante como podemos comunicarnos entre componentes, básicamente estamos pasando esta función al formulario TaskForm y luego ese formulario TaskForm a partir de props 
     // esta mandando la tarea de vuelta a Lista de Tareas TaskList para agregarla
     const addTask = task => {
+        console.log(task)
         if(task.text.trim()) { // validamos si la tarea no está vacía
             task.text = task.text.trim()  // quitamos los espacios innecesarios
 
@@ -29,9 +30,10 @@ function TaskList() {
                     * Pare renderizar una lista de componentes escribimos {} xq vamos a necesitar un método de arreglos de js
                 */}
                 {
-                    // cada task se va a representar como un Objeto en el Array y para cada uno de ellos se va a crear un componente
                     tasks.map((task) => 
                         <Task 
+                            key={task.id} // para q React sepa el orden de la lista y no lo cambie al actualizarlo debemos usar un atributo importante llamado key, si no se inluye key puede haber un error
+                            id={task.id} // aqui tmb repetimos pero en atributo id, eso xq key no se pasa como un prop es decir no podemos acceder a key en el componente, en cambio id si
                             text={task.text}
                             completed={task.completed}
                         />

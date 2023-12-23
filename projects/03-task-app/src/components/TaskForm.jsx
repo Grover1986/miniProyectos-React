@@ -18,7 +18,7 @@ function TaskForm(props) {
         // este objeto va quedando bien, ya luego lo vamos a pasar a nuestro componente TaskList para poder actualizar esa lista de tareas q representa su estado
         const taskNew = {
             id: uuidv4(),   // para manejar los Identificadores instalamos UUID
-            texto: input,
+            text: input,
             completed: false
         }
         props.onSubmit(taskNew) // esta funcion será un prop q nos lo va a pasar el componente TaskList y nos va a permitir agregar esta tarea (objeto) a la lista de tareas del estado
