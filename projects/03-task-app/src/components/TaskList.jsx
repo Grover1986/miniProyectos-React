@@ -26,6 +26,17 @@ function TaskList() {
         setTasks(tasksUpdate)
     }
 
+    const completeTask = id => {
+        const tasksUpdate = tasks.map(task => {
+            // aqui estamos trabajando con el objeto de tareas, no con el componente ni la parte visual, estamos trabajando con la representación en el objeto de la tarea en ese array
+            if(task.id === id) {
+                task.completed = !task.completed
+            }
+            return task
+        })
+        setTasks(tasksUpdate)
+    }
+
     return (
         <>
             <TaskForm onSubmit={addTask} />
@@ -40,8 +51,9 @@ function TaskList() {
                             key={task.id} // para q React sepa el orden de la lista y no lo cambie al actualizarlo debemos usar un atributo importante llamado key, si no se inluye key puede haber un error
                             id={task.id} // aqui tmb repetimos pero en atributo id, eso xq key no se pasa como un prop es decir no podemos acceder a key en el componente, en cambio id si
                             text={task.text}
-                            deleteTask={deleteTask}
                             completed={task.completed}
+                            deleteTask={deleteTask}
+                            completeTask={completeTask}
                         />
                     )
                 }
