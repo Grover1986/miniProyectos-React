@@ -31,8 +31,17 @@ h1 {
 .main-task-list {
     width: 600px;
     min-height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
     background-color: #d0d0d5;
     padding: 25px;
     margin: 10px;
     border-radius: 26px;
+}
+
+@media screen and (max-width: 640px) {
+    .main-task-list {
+        max-width: 600px;
+        width: 100%;
+    }
 }

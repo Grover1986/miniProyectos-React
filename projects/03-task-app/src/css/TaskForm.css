@@ -27,3 +27,19 @@
     color: #fff;
     text-transform: capitalize;
 }
+
+@media screen and (max-width: 640px) {
+    .task-form {
+        max-width: 500px;
+        margin: auto;
+        height: 53px;
+    }
+    .task-input {
+        width: 70%;
+    }
+    .task-button {
+        width: 30%;
+        padding: 0;
+        height: 100%;
+    }
+}
