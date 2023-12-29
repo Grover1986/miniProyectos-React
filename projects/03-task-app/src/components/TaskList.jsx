@@ -11,7 +11,6 @@ function TaskList() {
     // es impresionante como podemos comunicarnos entre componentes, básicamente estamos pasando esta función al formulario TaskForm y luego ese formulario TaskForm a partir de props 
     // esta mandando la tarea de vuelta a Lista de Tareas TaskList para agregarla
     const addTask = task => {
-        console.log(task)
         if(task.text.trim()) { // validamos si la tarea no está vacía
             task.text = task.text.trim()  // quitamos los espacios innecesarios
 

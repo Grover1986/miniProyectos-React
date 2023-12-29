@@ -13,7 +13,6 @@ function TaskForm(props) {
 
     const handleSend = e => {
         e.preventDefault()
-        console.log('Enviando formulario')
 
         // este objeto va quedando bien, ya luego lo vamos a pasar a nuestro componente TaskList para poder actualizar esa lista de tareas q representa su estado
         const taskNew = {
@@ -22,6 +21,7 @@ function TaskForm(props) {
             completed: false
         }
         props.onSubmit(taskNew) // esta funcion será un prop q nos lo va a pasar el componente TaskList y nos va a permitir agregar esta tarea (objeto) a la lista de tareas del estado
+        setInput('')
     }
 
     return (
@@ -33,6 +33,7 @@ function TaskForm(props) {
                 type='text'
                 placeholder='Escribe una tarea'
                 name='text'
+                value={input}
                 onChange={handleChange}
             />
             <button className='task-button'>
