@@ -10,8 +10,13 @@ const TURNS = {
 // donde se va a poder jugar cada uno de los movimientos. Así q creamos nuestro componente Square q necesitará un children, una actualización y un índice
 const Square = ({ children, isSelected, updateBoard, index }) => {
    const className = `square ${isSelected ? 'is-selected': ''}`
+
+   const handleClick = () => {
+      updateBoard()
+   }
+
    return (
-      <div className={className}>
+      <div onClick={handleClick} className={className}>
          {children}
       </div>
    )
@@ -36,6 +41,7 @@ function App() {
                      <Square
                         key={index}
                         index={index}
+                        updateBoard={updateBoard}
                      >
                         {index}
                      </Square>
