@@ -1,15 +1,15 @@
+/* Juego de tres en raya Tic Tac Toe (michi) */
+
+// objeto Turnos
+const TURNS = {
+   X: 'x',
+   O: 'o'
+}
+
+// variable tablero y su creación de índices
+const board = Array(9).fill(null)
+
 function App() {
-   
-   /* Juego de tres en raya Tic Tac Toe (michi) */
-
-   // objeto Turnos
-   const TURNS = {
-      X: 'x',
-      O: 'o'
-   }
-
-   // variable tablero y su creación de índices
-   const board = Array(9).fill(null)
 
    return (
       <main className='board'>
